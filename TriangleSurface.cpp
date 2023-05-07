@@ -1,7 +1,9 @@
 #include "TriangleSurface.h"
 
-TriangleSurface::TriangleSurface()
+TriangleSurface::TriangleSurface(Shader* shaderRef)
 {	
+	ShaderRef = shaderRef;
+
 	//							  X     Y    Z    R    G    B    U    V
 	mVertices.push_back(Vertex{  0.5, -0.5, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 });
 	mVertices.push_back(Vertex{ -0.5, -0.5, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0 });
@@ -47,9 +49,31 @@ void TriangleSurface::init(glm::mat4 matrixUniform)
 
 void TriangleSurface::draw()
 {
+	RenderIndex = ShaderRef->fillType;
 	glBindVertexArray(mVAO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mEBO);
-	glDrawElements(GL_TRIANGLES, mIndices.size(), GL_UNSIGNED_INT, 0);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-	glBindVertexArray(0);
+	ShaderRef->SetMat4("mMatrix", mMatrix);
+
+	switch (FillType(RenderIndex))
+	{
+	case FULL:
+		glDrawElements(GL_TRIANGLES, mIndices.size(), GL_UNSIGNED_INT, 0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
+		break;
+	case WIREFRAME:
+		glDrawElements(GL_LINES, mIndices.size(), GL_UNSIGNED_INT, 0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
+		break;
+	case POINTS:
+		glDrawElements(GL_POINTS, mIndices.size(), GL_UNSIGNED_INT, 0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
+		break;
+	default:
+		std::cout << "ERROR - INVALID RENDER STYLE ON OBJECT TYPE: TriangleSurface" << std::endl;
+		std::cout << "      - Render style: " << RenderIndex << std::endl;
+		break;
+	}
 }

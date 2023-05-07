@@ -8,6 +8,7 @@
 //
 
 Pyramid* pyramid;
+TriangleSurface* triangle;
 Heightmap* map;
 Light* light;
 Player* player;
@@ -115,7 +116,11 @@ int main()
 
 	pyramid = new Pyramid(CurrentShader);
 	pyramid->init(mMatrixUniform);
-	pyramid->setPosition(glm::vec3(0.0f, 2.0f, 2.0f));
+	pyramid->setPosition(glm::vec3(0.0f, 2.0f, 0.0f));
+
+	triangle = new TriangleSurface(CurrentShader);
+	triangle->init(mMatrixUniform);
+	triangle->setPosition(glm::vec3(0.0f, 2.0f, 6.0f));
 
 	player = new Player(CurrentShader);
 	player->init(mMatrixUniform);
@@ -139,6 +144,7 @@ int main()
 
 	PlainObjects.push_back(map);
 	PlainObjects.push_back(pyramid);
+	PlainObjects.push_back(triangle);
 	PlainObjects.push_back(player);
 	PlainObjects.push_back(pickup);
 	PlainObjects.push_back(pickup1);
