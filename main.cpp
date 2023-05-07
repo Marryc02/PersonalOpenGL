@@ -24,27 +24,31 @@ Pickup* pickup4;
 Pickup* pickup5;
 
 /* CONTROL SCHEME
-* 
+*
 * W = Move camera forward
 * A = Move camera left
 * S = Move camera backward
 * D = Move camera Right
-* 
+*
 * Spacebar = Move camera upward
 * C = Move camera downwards
 * Shift = Increase camera movement speed
-* 
+*
+* L = Lock/Unlock camera
+* O = Go to fixed camera position 1 (Requires camera to be locked)
+* P = Go to fixed camera position 2 (Requires camera to be locked)
+*
 * 1 = Full/Solid rendering mode
 * 2 = Wireframe rendering mode
 * 3 = Point rendering mode
-* 
+*
 * Left Arrow = Move player left
 * Right Arrow = Move player right
 * Up Arrow = Move player forward
 * Down Arrow = Move player backward
-* 
+*
 * Escape = Quit application
-* 
+*
 */
 
 int main()
