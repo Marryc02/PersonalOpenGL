@@ -12,7 +12,7 @@ Heightmap* map;
 Light* light;
 Player* player;
 Curve* Curve1;
-Cube* cube;
+Cube* obamnaCube;
 Circle* circle;
 Sphere* sphere;
 Pickup* pickup;
@@ -180,10 +180,10 @@ int main()
 	UpdateCurrentUniforms(shaderPrograms[1]);
 	CurrentShader = shaderPrograms[1];
 
-	cube = new Cube(Curve1, CurrentShader);
-	cube->init(mMatrixUniform);
+	obamnaCube = new Cube(Curve1, CurrentShader);
+	obamnaCube->init(mMatrixUniform);
 
-	TexturedObjects.push_back(cube);
+	TexturedObjects.push_back(obamnaCube);
 
 	//
 	// COLLISION SETUP
@@ -252,8 +252,9 @@ int main()
 			shaderPrograms[i]->SetMat4("vMatrix", mVMatrixUniform);
 		}
 
+
 		//
-		// LIGHT OBJECTS
+		// LIGHT OBJECTS - Draws objects that do not use light
 		//
 
 		shaderPrograms[2]->Activate();
@@ -266,15 +267,14 @@ int main()
 			(*it)->draw();
 		}
 
+
 		//
-		// PLAIN OBJECTS
+		// PLAIN OBJECTS - Draws regular objects
 		//
 
 		shaderPrograms[0]->Activate();
 		UpdateCurrentUniforms(shaderPrograms[0]);
 		CurrentShader = shaderPrograms[0];
-
-
 
 		for (auto it = PlainObjects.begin(); it != PlainObjects.end(); it++)
 		{
@@ -284,7 +284,7 @@ int main()
 
 
 		//
-		// TEXTURED OBJECTS
+		// TEXTURED OBJECTS - Draws textured objects
 		//
 
 		shaderPrograms[1]->Activate(); 
@@ -300,7 +300,8 @@ int main()
 			(*it)->draw();
 		}
 
-		cube->FollowCurve(DeltaTime);
+		obamnaCube->FollowCurve(DeltaTime);
+
 
 		//
 		// LIGHT MAGIC
@@ -562,6 +563,7 @@ void CheckAllColliders()
 	}
 }
 
+// Removes objects that are to be deleted
 void CullDeletedObjects()
 {
 	for (int i = 0; i < PlainObjects.size(); i++)

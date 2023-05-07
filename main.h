@@ -56,7 +56,6 @@ FillType CurrentFillType = FULL;
 
 // Textures
 std::vector<Texture*> allTextures;
-Texture* modoSerio;
 
 void ProcessInput(GLFWwindow* window);
 // xpos is the mouse's x-position, ypos is the mouse's y-position
