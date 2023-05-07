@@ -1,0 +1,5 @@
+﻿  Player.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Player.cpp(86,67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Player.cpp(91,63): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Player.cpp(96,64): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  PersonalOpenGL.vcxproj -> C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\x64\Debug\PersonalOpenGL.exe
