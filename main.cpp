@@ -114,13 +114,13 @@ int main()
 	map = new Heightmap(CurrentShader, (const char*)"Textures/Heightmap.jpg");
 	map->init(mMatrixUniform);
 
-	pyramid = new Pyramid(CurrentShader);
+	/*pyramid = new Pyramid(CurrentShader);
 	pyramid->init(mMatrixUniform);
-	pyramid->setPosition(glm::vec3(0.0f, 2.0f, 0.0f));
+	pyramid->setPosition(glm::vec3(0.0f, 2.0f, 0.0f));*/
 
-	triangle = new TriangleSurface(CurrentShader);
+	/*triangle = new TriangleSurface(CurrentShader);
 	triangle->init(mMatrixUniform);
-	triangle->setPosition(glm::vec3(0.0f, 2.0f, 6.0f));
+	triangle->setPosition(glm::vec3(0.0f, 2.0f, 6.0f));*/
 
 	player = new Player(CurrentShader);
 	player->init(mMatrixUniform);
@@ -129,6 +129,42 @@ int main()
 	pickup = new Pickup(CurrentShader);
 	pickup->init(mMatrixUniform);
 	pickup->setPosition(0.0f, map->HeightFromBaryc(glm::vec2(pickup->position[0], pickup->position[2])) + pickup->LowestY, 0.0f);
+
+	/*pickup1 = new Pickup(CurrentShader);
+	pickup2 = new Pickup(CurrentShader);
+	pickup3 = new Pickup(CurrentShader);
+	pickup4 = new Pickup(CurrentShader);
+	pickup5 = new Pickup(CurrentShader);
+	pickup1->init(mMatrixUniform);
+	pickup2->init(mMatrixUniform);
+	pickup3->init(mMatrixUniform);
+	pickup4->init(mMatrixUniform);
+	pickup5->init(mMatrixUniform);*/
+
+
+	PlainObjects.push_back(map);
+	/*PlainObjects.push_back(pyramid);
+	PlainObjects.push_back(triangle);*/
+	PlainObjects.push_back(player);
+	/*PlainObjects.push_back(pickup);
+	PlainObjects.push_back(pickup1);
+	PlainObjects.push_back(pickup2);
+	PlainObjects.push_back(pickup3);
+	PlainObjects.push_back(pickup4);
+	PlainObjects.push_back(pickup5);
+	pickup1->setPosition(-10.0f, map->HeightFromBaryc(glm::vec2(-10.0f, 7.0f)) + pickup->LowestY, 7.0);
+	pickup2->setPosition( 15.0f, map->HeightFromBaryc(glm::vec2(15.0f, 5.0f)) + pickup->LowestY, 5.0f);
+	pickup3->setPosition(-8.0f,  map->HeightFromBaryc(glm::vec2(-8.0f, 19.0f)) + pickup->LowestY, 19.0f);
+	pickup4->setPosition( 20.0f, map->HeightFromBaryc(glm::vec2(20.0f, 3.0f)) + pickup->LowestY, 3.0f);
+	pickup5->setPosition( 12.0f, map->HeightFromBaryc(glm::vec2(12.0f, 9.0f)) + pickup->LowestY, 9.0f);*/
+
+	// Init function for light shaded objects
+	UpdateCurrentUniforms(shaderPrograms[2]);
+	CurrentShader = shaderPrograms[2];
+
+	light = new Light(1.0f, 1.0f, 1.0f, 0.1f, 0.7f, CurrentShader);
+	light->init(mMatrixUniform);
+	light->SetLightPosition(glm::vec3(-10.f, 1.0f, 0.0f));
 
 	pickup1 = new Pickup(CurrentShader);
 	pickup2 = new Pickup(CurrentShader);
@@ -141,32 +177,19 @@ int main()
 	pickup4->init(mMatrixUniform);
 	pickup5->init(mMatrixUniform);
 
-
-	PlainObjects.push_back(map);
-	PlainObjects.push_back(pyramid);
-	PlainObjects.push_back(triangle);
-	PlainObjects.push_back(player);
-	PlainObjects.push_back(pickup);
-	PlainObjects.push_back(pickup1);
-	PlainObjects.push_back(pickup2);
-	PlainObjects.push_back(pickup3);
-	PlainObjects.push_back(pickup4);
-	PlainObjects.push_back(pickup5);
+	LightObjects.push_back(pickup);
+	LightObjects.push_back(pickup1);
+	LightObjects.push_back(pickup2);
+	LightObjects.push_back(pickup3);
+	LightObjects.push_back(pickup4);
+	LightObjects.push_back(pickup5);
 	pickup1->setPosition(-10.0f, map->HeightFromBaryc(glm::vec2(-10.0f, 7.0f)) + pickup->LowestY, 7.0);
-	pickup2->setPosition( 15.0f, map->HeightFromBaryc(glm::vec2(15.0f, 5.0f)) + pickup->LowestY, 5.0f);
-	pickup3->setPosition(-8.0f,  map->HeightFromBaryc(glm::vec2(-8.0f, 19.0f)) + pickup->LowestY, 19.0f);
-	pickup4->setPosition( 20.0f, map->HeightFromBaryc(glm::vec2(20.0f, 3.0f)) + pickup->LowestY, 3.0f);
-	pickup5->setPosition( 12.0f, map->HeightFromBaryc(glm::vec2(12.0f, 9.0f)) + pickup->LowestY, 9.0f);
+	pickup2->setPosition(15.0f, map->HeightFromBaryc(glm::vec2(15.0f, 5.0f)) + pickup->LowestY, 5.0f);
+	pickup3->setPosition(-8.0f, map->HeightFromBaryc(glm::vec2(-8.0f, 19.0f)) + pickup->LowestY, 19.0f);
+	pickup4->setPosition(20.0f, map->HeightFromBaryc(glm::vec2(20.0f, 3.0f)) + pickup->LowestY, 3.0f);
+	pickup5->setPosition(12.0f, map->HeightFromBaryc(glm::vec2(12.0f, 9.0f)) + pickup->LowestY, 9.0f);
 
-	// Init function for light shaded objects
-	UpdateCurrentUniforms(shaderPrograms[2]);
-	CurrentShader = shaderPrograms[2];
-
-	light = new Light(1.0f, 1.0f, 1.0f, 0.1f, 0.7f, CurrentShader);
-	light->init(mMatrixUniform);
-	light->SetLightPosition(glm::vec3(-10.f, 1.0f, 0.0f));
-
-	Curve1 = new Curve(CurrentShader, "Pathfiles/graph.txt");
+	/*Curve1 = new Curve(CurrentShader, "Pathfiles/graph.txt");
 	Curve1->init(mMatrixUniform);
 
 	circle = new Circle(CurrentShader);
@@ -174,22 +197,22 @@ int main()
 
 	sphere = new Sphere(CurrentShader, 3);
 	sphere->init(mMatrixUniform);
-	sphere->setPosition(1.0f, 10.0f, 0.0f);
+	sphere->setPosition(1.0f, 10.0f, 0.0f);*/
 
 	LightObjects.push_back(light);
-	LightObjects.push_back(Curve1);
+	/*LightObjects.push_back(Curve1);
 	LightObjects.push_back(circle);
-	LightObjects.push_back(sphere);
+	LightObjects.push_back(sphere);*/
 
 	// Init function for textured objects
 
 	UpdateCurrentUniforms(shaderPrograms[1]);
 	CurrentShader = shaderPrograms[1];
 
-	obamnaCube = new Cube(Curve1, CurrentShader);
+	/*obamnaCube = new Cube(Curve1, CurrentShader);
 	obamnaCube->init(mMatrixUniform);
 
-	TexturedObjects.push_back(obamnaCube);
+	TexturedObjects.push_back(obamnaCube);*/
 
 	//
 	// COLLISION SETUP
@@ -205,7 +228,7 @@ int main()
 
 	for (int i = 0; i < TexturedObjects.size(); i++)
 	{
-		if (dynamic_cast<CollisionComponent*>(PlainObjects[i]))
+		if (dynamic_cast<CollisionComponent*>(TexturedObjects[i]))
 		{
 			CollisionObjects.push_back(TexturedObjects[i]);
 		}
@@ -213,7 +236,7 @@ int main()
 
 	for (int i = 0; i < LightObjects.size(); i++)
 	{
-		if (dynamic_cast<CollisionComponent*>(PlainObjects[i]))
+		if (dynamic_cast<CollisionComponent*>(LightObjects[i]))
 		{
 			CollisionObjects.push_back(LightObjects[i]);
 		}
@@ -273,6 +296,13 @@ int main()
 			(*it)->draw();
 		}
 
+		pickup->setRotation((float)glfwGetTime() * 120, glm::vec3(0.0f, 1.0f, 0.0f));
+		pickup1->setRotation((float)glfwGetTime() * 120, glm::vec3(0.0f, 1.0f, 0.0f));
+		pickup2->setRotation((float)glfwGetTime() * 120, glm::vec3(0.0f, 1.0f, 0.0f));
+		pickup3->setRotation((float)glfwGetTime() * 120, glm::vec3(0.0f, 1.0f, 0.0f));
+		pickup4->setRotation((float)glfwGetTime() * 120, glm::vec3(0.0f, 1.0f, 0.0f));
+		pickup5->setRotation((float)glfwGetTime() * 120, glm::vec3(0.0f, 1.0f, 0.0f));
+
 
 		//
 		// PLAIN OBJECTS - Draws regular objects
@@ -306,7 +336,7 @@ int main()
 			(*it)->draw();
 		}
 
-		obamnaCube->FollowCurve(DeltaTime);
+		//obamnaCube->FollowCurve(DeltaTime);
 
 
 		//
