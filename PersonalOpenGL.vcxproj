@@ -199,7 +199,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\Heightmap.jpg" />
+    <Image Include="Textures\majima_crazy.jpg" />
     <Image Include="Textures\obamna.jpg" />
+    <Image Include="Textures\papa.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

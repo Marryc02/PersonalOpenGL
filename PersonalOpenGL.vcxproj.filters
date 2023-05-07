@@ -195,5 +195,11 @@
     <Image Include="Textures\Heightmap.jpg">
       <Filter>Source Files\Textures</Filter>
     </Image>
+    <Image Include="Textures\papa.jpg">
+      <Filter>Source Files\Textures</Filter>
+    </Image>
+    <Image Include="Textures\majima_crazy.jpg">
+      <Filter>Source Files\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -13,7 +13,7 @@ Heightmap* map;
 Light* light;
 Player* player;
 Curve* Curve1;
-Cube* obamnaCube;
+Cube* texturedCube;
 Circle* circle;
 Sphere* sphere;
 Pickup* pickup;
@@ -103,7 +103,7 @@ int main()
 
 	// Texture setups
 	allTextures.push_back(new Texture()); // Filler texture
-	allTextures.push_back(new Texture((char*)"Textures/obamna.jpg")); // Actual texture
+	allTextures.push_back(new Texture((char*)"Textures/majima_crazy.jpg")); // Actual texture
 
 
 	// Load textures
@@ -193,10 +193,10 @@ int main()
 	pickup4->setPosition(20.0f, map->HeightFromBaryc(glm::vec2(20.0f, 3.0f)) + pickup->LowestY, 3.0f);
 	pickup5->setPosition(12.0f, map->HeightFromBaryc(glm::vec2(12.0f, 9.0f)) + pickup->LowestY, 9.0f);
 
-	/*Curve1 = new Curve(CurrentShader, "Pathfiles/graph.txt");
+	Curve1 = new Curve(CurrentShader, "Pathfiles/graph.txt");
 	Curve1->init(mMatrixUniform);
 
-	circle = new Circle(CurrentShader);
+	/*circle = new Circle(CurrentShader);
 	circle->init(mMatrixUniform);
 
 	sphere = new Sphere(CurrentShader, 3);
@@ -204,8 +204,8 @@ int main()
 	sphere->setPosition(1.0f, 10.0f, 0.0f);*/
 
 	LightObjects.push_back(light);
-	/*LightObjects.push_back(Curve1);
-	LightObjects.push_back(circle);
+	LightObjects.push_back(Curve1);
+	/*LightObjects.push_back(circle);
 	LightObjects.push_back(sphere);*/
 
 	// Init function for textured objects
@@ -213,10 +213,10 @@ int main()
 	UpdateCurrentUniforms(shaderPrograms[1]);
 	CurrentShader = shaderPrograms[1];
 
-	/*obamnaCube = new Cube(Curve1, CurrentShader);
-	obamnaCube->init(mMatrixUniform);
+	texturedCube = new Cube(Curve1, CurrentShader);
+	texturedCube->init(mMatrixUniform);
 
-	TexturedObjects.push_back(obamnaCube);*/
+	TexturedObjects.push_back(texturedCube);
 
 	//
 	// COLLISION SETUP
@@ -340,7 +340,7 @@ int main()
 			(*it)->draw();
 		}
 
-		//obamnaCube->FollowCurve(DeltaTime);
+		texturedCube->FollowCurve(DeltaTime);
 
 
 		//

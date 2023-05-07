@@ -1,1 +1,11 @@
-﻿  PersonalOpenGL.vcxproj -> C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\x64\Debug\PersonalOpenGL.exe
+﻿  main.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(357,67): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(357,45): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(539,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(540,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(544,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(545,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(546,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(547,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(592,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  PersonalOpenGL.vcxproj -> C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\x64\Debug\PersonalOpenGL.exe
