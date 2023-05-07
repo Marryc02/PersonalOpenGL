@@ -80,6 +80,7 @@ void Pyramid::draw()
 	RenderIndex = ShaderRef->fillType;
 	glBindVertexArray(mVAO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mEBO);
+	ShaderRef->SetMat4("mMatrix", mMatrix);
 
 	switch (FillType(RenderIndex))
 	{

@@ -263,7 +263,7 @@ int main()
 
 		for (auto it = LightObjects.begin(); it != LightObjects.end(); it++)
 		{
-			shaderPrograms[2]->SetMat4("mMatrix", glm::translate(glm::mat4(1.f), (*it)->position));
+			//shaderPrograms[2]->SetMat4("mMatrix", glm::translate(glm::mat4(1.f), (*it)->position));
 			(*it)->draw();
 		}
 
@@ -278,7 +278,7 @@ int main()
 
 		for (auto it = PlainObjects.begin(); it != PlainObjects.end(); it++)
 		{
-			shaderPrograms[0]->SetMat4("mMatrix", glm::translate(glm::mat4(1.f), (*it)->position));
+			//shaderPrograms[0]->SetMat4("mMatrix", glm::translate(glm::mat4(1.f), (*it)->position));
 			(*it)->draw();
 		}
 
@@ -296,7 +296,7 @@ int main()
 
 		for (auto it = TexturedObjects.begin(); it != TexturedObjects.end(); it++)
 		{
-			shaderPrograms[1]->SetMat4("mMatrix", glm::translate(glm::mat4(1.f), (*it)->position));
+			//shaderPrograms[1]->SetMat4("mMatrix", glm::translate(glm::mat4(1.f), (*it)->position));
 			(*it)->draw();
 		}
 
