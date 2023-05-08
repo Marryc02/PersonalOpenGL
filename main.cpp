@@ -355,7 +355,7 @@ int main()
 		CurrentShader->SetVec3("viewPos", camera->Position);
 
 		light->UseLight(mAmbientIntensityUniform, mAmbientColorUniform, mDiffuseIntensityUniform, mLightPositionUniform);
-
+		//pickup->setScale(glm::vec3(2.0, 2.0, 2.0));
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

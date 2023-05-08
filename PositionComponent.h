@@ -46,7 +46,11 @@ public:
 	//void setX(float x);
 	void setY(float y);
 
+	// set rotation
 	void setRotation(float angle, glm::vec3 axis);
+
+	// set scale
+	void setScale(glm::vec3 scaleIncrease);
 
 	float moveSpeed{};
 	bool useLocal{ true };

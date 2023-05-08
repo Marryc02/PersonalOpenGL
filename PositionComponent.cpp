@@ -114,6 +114,11 @@ void PositionComponent::setRotation(float angle, glm::vec3 axis)
 	mMatrix = glm::translate(mMatrix, glm::vec3(0.0f, 0.0f, 0.0f));
 }
 
+void PositionComponent::setScale(glm::vec3 scaleIncrease)
+{
+	mMatrix = glm::scale(mMatrix, glm::vec3(scaleIncrease));
+}
+
 void PositionComponent::setY(float y) {
 	position.y = y;
 	setPositionMatrix(position);

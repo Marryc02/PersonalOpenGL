@@ -1,4 +1,58 @@
-﻿  main.cpp
+﻿  CurveMovementComponent.cpp
+  Heightmap.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Heightmap.cpp(26,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Heightmap.cpp(27,14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Heightmap.cpp(198,67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Heightmap.cpp(203,63): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Heightmap.cpp(208,64): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Light.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Light.cpp(54,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Light.cpp(60,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Light.cpp(62,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Light.cpp(114,67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Light.cpp(119,63): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Light.cpp(124,64): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Pickup.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Pickup.cpp(78,70): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Pickup.cpp(83,68): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Pickup.cpp(88,64): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Player.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Player.cpp(87,67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Player.cpp(92,63): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Objects\Player.cpp(97,64): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  PositionComponent.cpp
+  Circle.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Circle.cpp(89,70): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Circle.cpp(94,68): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Circle.cpp(99,64): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Cube.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Cube.cpp(39,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Cube.cpp(62,41): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Cube.cpp(81,41): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Cube.cpp(140,67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Cube.cpp(145,63): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Cube.cpp(150,64): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Curve.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Curve.cpp(25,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Curve.cpp(62,52): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Pyramid.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Pyramid.cpp(12,74): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Pyramid.cpp(13,74): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Pyramid.cpp(17,74): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Pyramid.cpp(88,67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Pyramid.cpp(93,63): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Pyramid.cpp(98,64): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Sphere.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Sphere.cpp(18,26): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Sphere.cpp(61,49): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Sphere.cpp(64,45): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\Shapes\Sphere.cpp(67,45): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  TriangleSurface.cpp
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\TriangleSurface.cpp(60,67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\TriangleSurface.cpp(65,63): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\TriangleSurface.cpp(70,64): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  VisualObject.cpp
+  main.cpp
 C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(357,67): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
 C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(357,45): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
 C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(539,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
@@ -8,4 +62,20 @@ C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i 
 C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(546,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(547,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(592,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+glfw3.lib(init.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(init.obj)' or at ''; linking object as if no debug info
+glfw3.lib(window.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(window.obj)' or at ''; linking object as if no debug info
+glfw3.lib(input.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(input.obj)' or at ''; linking object as if no debug info
+glfw3.lib(context.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(context.obj)' or at ''; linking object as if no debug info
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(win32_init.obj)' or at ''; linking object as if no debug info
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(win32_monitor.obj)' or at ''; linking object as if no debug info
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(win32_time.obj)' or at ''; linking object as if no debug info
+glfw3.lib(win32_thread.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(win32_thread.obj)' or at ''; linking object as if no debug info
+glfw3.lib(monitor.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(monitor.obj)' or at ''; linking object as if no debug info
+glfw3.lib(vulkan.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(vulkan.obj)' or at ''; linking object as if no debug info
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(win32_window.obj)' or at ''; linking object as if no debug info
+glfw3.lib(win32_joystick.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(win32_joystick.obj)' or at ''; linking object as if no debug info
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(wgl_context.obj)' or at ''; linking object as if no debug info
+glfw3.lib(egl_context.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(egl_context.obj)' or at ''; linking object as if no debug info
+glfw3.lib(osmesa_context.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(osmesa_context.obj)' or at ''; linking object as if no debug info
   PersonalOpenGL.vcxproj -> C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\x64\Debug\PersonalOpenGL.exe
