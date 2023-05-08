@@ -111,6 +111,8 @@ void Player::OnCollision(VisualObject* other)
 	{
 		std::cout << "Player has collided!" << std::endl;
 		RemoveCollisionTarget(other);
+		pointsCollected++;
+		std::cout << "The player has collected " << pointsCollected << " points." << std::endl;
 	}
 }
 

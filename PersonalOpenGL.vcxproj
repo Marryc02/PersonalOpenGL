@@ -147,6 +147,7 @@
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Heightmap.cpp" />
+    <ClCompile Include="LightSwitch.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Objects\Camera.cpp" />
     <ClCompile Include="Objects\Light.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Enums.h" />
     <ClInclude Include="FileLoader.h" />
     <ClInclude Include="Heightmap.h" />
+    <ClInclude Include="LightSwitch.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Objects\Camera.h" />
     <ClInclude Include="Objects\Light.h" />

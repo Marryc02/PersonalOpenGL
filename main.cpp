@@ -126,10 +126,6 @@ int main()
 	triangle->init(mMatrixUniform);
 	triangle->setPosition(glm::vec3(0.0f, 2.0f, 6.0f));*/
 
-	player = new Player(CurrentShader);
-	player->init(mMatrixUniform);
-	player->setPosition(3.0f, map->HeightFromBaryc(glm::vec2(player->position[0], player->position[2])) + player->LowestY, 2.0f);
-
 	pickup = new Pickup(CurrentShader);
 	pickup->init(mMatrixUniform);
 	pickup->setPosition(0.0f, map->HeightFromBaryc(glm::vec2(pickup->position[0], pickup->position[2])) + pickup->LowestY, 0.0f);
@@ -149,7 +145,7 @@ int main()
 	PlainObjects.push_back(map);
 	/*PlainObjects.push_back(pyramid);
 	PlainObjects.push_back(triangle);*/
-	PlainObjects.push_back(player);
+	/*PlainObjects.push_back(player);*/
 	/*PlainObjects.push_back(pickup);
 	PlainObjects.push_back(pickup1);
 	PlainObjects.push_back(pickup2);
@@ -216,7 +212,12 @@ int main()
 	texturedCube = new Cube(Curve1, CurrentShader);
 	texturedCube->init(mMatrixUniform);
 
+	player = new Player(CurrentShader);
+	player->init(mMatrixUniform);
+	player->setPosition(3.0f, map->HeightFromBaryc(glm::vec2(player->position[0], player->position[2])) + player->LowestY, 2.0f);
+
 	TexturedObjects.push_back(texturedCube);
+	TexturedObjects.push_back(player);
 
 	//
 	// COLLISION SETUP

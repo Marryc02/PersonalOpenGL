@@ -99,6 +99,9 @@
     <ClCompile Include="Objects\Pickup.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="LightSwitch.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shaderClass.h">
@@ -165,6 +168,9 @@
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Objects\Pickup.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="LightSwitch.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>
