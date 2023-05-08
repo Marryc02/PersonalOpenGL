@@ -147,10 +147,11 @@
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Heightmap.cpp" />
-    <ClCompile Include="LightSwitch.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Objects\Camera.cpp" />
+    <ClCompile Include="Objects\Enemy.cpp" />
     <ClCompile Include="Objects\Light.cpp" />
+    <ClCompile Include="Objects\LightSwitch.cpp" />
     <ClCompile Include="Objects\Pickup.cpp" />
     <ClCompile Include="Objects\Player.cpp" />
     <ClCompile Include="PositionComponent.cpp" />
@@ -172,10 +173,11 @@
     <ClInclude Include="Enums.h" />
     <ClInclude Include="FileLoader.h" />
     <ClInclude Include="Heightmap.h" />
-    <ClInclude Include="LightSwitch.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Objects\Camera.h" />
+    <ClInclude Include="Objects\Enemy.h" />
     <ClInclude Include="Objects\Light.h" />
+    <ClInclude Include="Objects\LightSwitch.h" />
     <ClInclude Include="Objects\Pickup.h" />
     <ClInclude Include="Objects\Player.h" />
     <ClInclude Include="PositionComponent.h" />

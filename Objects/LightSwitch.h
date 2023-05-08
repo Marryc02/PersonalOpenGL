@@ -3,6 +3,7 @@
 #include "../VisualObject.h"
 #include "../FileLoader.h"
 #include "../CollisionComponent.h"
+#include <GLFW/glfw3.h>
 
 
 class Shader;
@@ -14,9 +15,13 @@ public:
 	LightSwitch(Shader* shaderRef);
 	~LightSwitch();
 
+	void lightSwitchResetCounter();
 
 	void init(glm::mat4 matrixUniform) override;
 	void draw() override;
+
+	bool bSwitchHasBeenFlipped = false;
+	float switchCounter;
 
 private:
 	Shader* ShaderRef;

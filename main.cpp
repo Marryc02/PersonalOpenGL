@@ -7,14 +7,14 @@
 // OBJECT CREATION
 //
 
-Pyramid* pyramid;
-TriangleSurface* triangle;
+//Pyramid* pyramid;
+//TriangleSurface* triangle;
 Heightmap* map;
 Light* light;
 Player* player;
 Curve* Curve1;
 Cube* texturedCube;
-Circle* circle;
+//Circle* circle;
 Sphere* sphere;
 Pickup* pickup;
 Pickup* pickup1;
@@ -22,6 +22,8 @@ Pickup* pickup2;
 Pickup* pickup3;
 Pickup* pickup4;
 Pickup* pickup5;
+LightSwitch* lightswitch;
+Enemy* enemy;
 
 /* CONTROL SCHEME
 *
@@ -34,7 +36,7 @@ Pickup* pickup5;
 * C = Move camera downwards
 * Shift = Increase camera movement speed
 *
-* L = Lock/Unlock camera
+* L = Lock/Unlock camera : SWITCHED TO CHANGE FIRST/THIRD PERSON
 * O = Go to fixed camera position 1 (Requires camera to be locked)
 * P = Go to fixed camera position 2 (Requires camera to be locked)
 *
@@ -177,6 +179,14 @@ int main()
 	pickup4->init(mMatrixUniform);
 	pickup5->init(mMatrixUniform);
 
+	lightswitch = new LightSwitch(CurrentShader);
+	lightswitch->init(mMatrixUniform);
+	lightswitch->setPosition(10.0f, map->HeightFromBaryc(glm::vec2(10.0f, -20.0f)) + lightswitch->LowestY, -20.0f);
+
+	enemy = new Enemy(CurrentShader);
+	enemy->init(mMatrixUniform);
+	enemy->setPosition(-10.0f, map->HeightFromBaryc(glm::vec2(-10.0f, -20.0f)) + lightswitch->LowestY, -20.0f);
+
 	LightObjects.push_back(pickup);
 	LightObjects.push_back(pickup1);
 	LightObjects.push_back(pickup2);
@@ -188,6 +198,9 @@ int main()
 	pickup3->setPosition(-8.0f, map->HeightFromBaryc(glm::vec2(-8.0f, 19.0f)) + pickup->LowestY, 19.0f);
 	pickup4->setPosition(20.0f, map->HeightFromBaryc(glm::vec2(20.0f, 3.0f)) + pickup->LowestY, 3.0f);
 	pickup5->setPosition(12.0f, map->HeightFromBaryc(glm::vec2(12.0f, 9.0f)) + pickup->LowestY, 9.0f);
+	LightObjects.push_back(lightswitch);
+	LightObjects.push_back(enemy);
+
 
 	Curve1 = new Curve(CurrentShader, "Pathfiles/graph.txt");
 	Curve1->init(mMatrixUniform);
@@ -257,10 +270,14 @@ int main()
 	player->SetCollisionTarget(pickup3);
 	player->SetCollisionTarget(pickup4);
 	player->SetCollisionTarget(pickup5);
+	player->SetCollisionTarget(lightswitch);
+	enemy->SetCollisionTarget(player);
+	
+	
 	std::cout << "Collision objects: " << CollisionObjects.size() << std::endl;
 
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	glfwSetCursorPosCallback(window, MouseCallback);
+	//glfwSetCursorPosCallback(window, MouseCallback);
 	glfwSetScrollCallback(window, ScrollCallBack);
 	glEnable(GL_DEPTH_TEST);
 
@@ -270,6 +287,7 @@ int main()
 		Tick();
 		ProcessInput(window);
 		CheckAllColliders();
+		CheckLightSwitch();
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -284,6 +302,18 @@ int main()
 			// camera/view transformation
 			mVMatrixUniform = glm::lookAt(camera->Position, camera->Position + camera->Front, camera->Up);
 			shaderPrograms[i]->SetMat4("vMatrix", mVMatrixUniform);
+		}
+
+
+		if (CameraFirstPerson)
+		{
+			camera->Position = player->position + glm::vec3(0.0f, 0.0f, -1.0f);
+			camera->Front = -player->right;
+		}
+		else
+		{
+			camera->Position = player->position + glm::vec3(0.0f, 24.0f, 30.0f);
+			camera->Front = player->position - camera->Position;
 		}
 
 
@@ -355,8 +385,19 @@ int main()
 
 		CurrentShader->SetVec3("viewPos", camera->Position);
 
-		light->UseLight(mAmbientIntensityUniform, mAmbientColorUniform, mDiffuseIntensityUniform, mLightPositionUniform);
+		//light->UseLight(mAmbientIntensityUniform, mAmbientColorUniform, mDiffuseIntensityUniform, mLightPositionUniform);
 		//pickup->setScale(glm::vec3(2.0, 2.0, 2.0));
+
+		if (lightswitch->bSwitchHasBeenFlipped == false)
+		{
+			light->UseLight(mAmbientIntensityUniform, mAmbientColorUniform, mDiffuseIntensityUniform, mLightPositionUniform);
+		}
+
+		if (enemy->WillResetGame)
+		{
+			enemy->WillResetGame = false;
+			ResetGame();
+		}
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
@@ -422,63 +463,54 @@ void ProcessInput(GLFWwindow* window)
 	}
 
 	// Camera inputs
-	if (!IsCameraLocked)
+
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 	{
-		if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		{
-			camera->ProcessKeyboard(FORWARD, DeltaTime);
-		}
-		if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		{
-			camera->ProcessKeyboard(LEFT, DeltaTime);
-		}
-		if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-		{
-			camera->ProcessKeyboard(BACKWARD, DeltaTime);
-		}
-		if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		{
-			camera->ProcessKeyboard(RIGHT, DeltaTime);
-		}
-		if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
-		{
-			camera->ProcessKeyboard(UPWARD, DeltaTime);
-		}
-		if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
-		{
-			camera->ProcessKeyboard(DOWNWARD, DeltaTime);
-		}
-		if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-		{
-			camera->MovementSpeed = 45;
-		}
-		if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
-		{
-			camera->MovementSpeed = 15;
-		}
-		if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
-		{
-			IsCameraLocked = true;
-		}
+		camera->ProcessKeyboard(FORWARD, DeltaTime);
 	}
-	else
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
 	{
-		if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
-		{
-			camera->Position = glm::vec3(-24.3609f, -12.1139f, 22.085f);
-			camera->Pitch = 4.1f;
-			camera->Yaw = -31.0f;
-		}
-		if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
-		{
-			camera->Position = glm::vec3(1.17202f, 27.975f, 46.665f);
-			camera->Pitch = -38.7f;
-			camera->Yaw = -90.5f;
-		}
-		if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
-		{
-			IsCameraLocked = false;
-		}
+		camera->ProcessKeyboard(LEFT, DeltaTime);
+	}
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+	{
+		camera->ProcessKeyboard(BACKWARD, DeltaTime);
+	}
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+	{
+		camera->ProcessKeyboard(RIGHT, DeltaTime);
+	}
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+	{
+		camera->ProcessKeyboard(UPWARD, DeltaTime);
+	}
+	if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
+	{
+		camera->ProcessKeyboard(DOWNWARD, DeltaTime);
+	}
+	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+	{
+		camera->MovementSpeed = 45;
+	}
+	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
+	{
+		camera->MovementSpeed = 15;
+	}
+	if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
+	{
+		camera->Position = glm::vec3(-24.3609f, -12.1139f, 22.085f);
+		camera->Pitch = 4.1f;
+		camera->Yaw = -31.0f;
+	}
+	if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
+	{
+		camera->Position = glm::vec3(1.17202f, 27.975f, 46.665f);
+		camera->Pitch = -38.7f;
+		camera->Yaw = -90.5f;
+	}
+	if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
+	{
+		CameraFirstPerson = !CameraFirstPerson;
 	}
 
 	// Player inputs
@@ -600,7 +632,16 @@ void CheckAllColliders()
 	for (int i = 0; i < CollisionObjects.size(); i++)
 	{
 		player->CheckCollision((VisualObject*)CollisionObjects[i]);
+		enemy->CheckCollision((VisualObject*)CollisionObjects[i]);
 		CullDeletedObjects();
+	}
+}
+
+void CheckLightSwitch()
+{
+	if (lightswitch->bSwitchHasBeenFlipped)
+	{
+		lightswitch->lightSwitchResetCounter();
 	}
 }
 
@@ -642,4 +683,26 @@ void CullDeletedObjects()
 			CollisionObjects.pop_back();
 		}
 	}
+}
+
+void ResetGame()
+{
+	for (int i = 0; i < PlainObjects.size(); i++)
+	{
+		PlainObjects[i]->WillBeDeleted = false;
+	}
+
+	for (int i = 0; i < TexturedObjects.size(); i++)
+	{
+		TexturedObjects[i]->WillBeDeleted = false;
+	}
+
+	for (int i = 0; i < LightObjects.size(); i++)
+	{
+		LightObjects[i]->WillBeDeleted = false;
+	}
+
+	player->PickupScore = 0;
+	player->setPosition(3.0f, map->HeightFromBaryc(glm::vec2(player->position[0], player->position[2])) + player->LowestY, 2.0f);
+
 }

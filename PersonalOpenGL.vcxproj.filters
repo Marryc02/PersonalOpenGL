@@ -99,7 +99,10 @@
     <ClCompile Include="Objects\Pickup.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="LightSwitch.cpp">
+    <ClCompile Include="Objects\LightSwitch.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Enemy.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
   </ItemGroup>
@@ -170,7 +173,10 @@
     <ClInclude Include="Objects\Pickup.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="LightSwitch.h">
+    <ClInclude Include="Objects\LightSwitch.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Enemy.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>

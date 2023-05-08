@@ -14,6 +14,8 @@
 #include "Shapes/Circle.h"
 #include "Shapes/Sphere.h"
 #include "Objects/Pickup.h"
+#include "Objects/LightSwitch.h"
+#include "Objects/Enemy.h"
 
 #include <glm/glm.hpp>
 
@@ -65,7 +67,12 @@ void ScrollCallBack(GLFWwindow* window, double xOffset, double yOffset);
 void Tick();
 
 void CheckAllColliders();
+void CheckLightSwitch();
 void CullDeletedObjects();
+
+void ResetGame();
+
+bool CameraFirstPerson = true;
 
 // Uniforms
 glm::mat4 mMatrixUniform = glm::mat4(1.0f);

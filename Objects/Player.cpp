@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "../Objects/Pickup.h"
+#include "../Objects/LightSwitch.h"
 #include <iostream>
 
 
@@ -110,9 +111,21 @@ void Player::OnCollision(VisualObject* other)
 	if (dynamic_cast<Pickup*>(other))
 	{
 		std::cout << "Player has collided!" << std::endl;
-		RemoveCollisionTarget(other);
-		pointsCollected++;
-		std::cout << "The player has collected " << pointsCollected << " points." << std::endl;
+		PickupScore++;
+		std::cout << "Current player score: " << PickupScore << std::endl;
+		//RemoveCollisionTarget(other);
+		other->WillBeDeleted = true;
+	}
+	else if (dynamic_cast<LightSwitch*>(other))
+	{
+		LightSwitch* temp;
+		temp = (LightSwitch*)other;
+		if (temp->bSwitchHasBeenFlipped == false)
+		{
+			std::cout << "Player has collided with the light switch! Collide with it again to turn the light on/off" << std::endl;
+			temp->switchCounter = glfwGetTime();
+			temp->bSwitchHasBeenFlipped = true;
+		}
 	}
 }
 

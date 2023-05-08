@@ -24,7 +24,8 @@ public:
 	void ProcessKeyboard(Movement direction, float deltaTime);
 	std::vector<VisualObject*> CollisionChecks;
 
-	float pointsCollected = 0;
+	float PickupScore = 0;
+	
 
 private:
 	float MovementSpeed = 5.0f;
