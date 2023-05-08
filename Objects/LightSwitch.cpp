@@ -37,6 +37,7 @@ void LightSwitch::lightSwitchResetCounter()
 	if (glfwGetTime() > switchCounter + 2)
 	{
 		bSwitchHasBeenFlipped = false;
+		bCanFlipSwitchAgain = true;
 		std::cout << "Unflipping switch" << std::endl;
 	}
 }

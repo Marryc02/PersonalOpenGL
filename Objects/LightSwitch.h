@@ -21,6 +21,7 @@ public:
 	void draw() override;
 
 	bool bSwitchHasBeenFlipped = false;
+	bool bCanFlipSwitchAgain = true;
 	float switchCounter;
 
 private:

@@ -49,13 +49,15 @@ void Light::DrawMesh(float scale)
 
 }
 
-void Light::UseLight(GLuint LightIntensityLocation, GLfloat LightColorLocation)
+void Light::UseLightAmb(GLuint LightIntensityLocation, GLfloat LightColorLocation, GLfloat DiffuseIntensityLocation, GLfloat SpecularStrengthLocation)
 {
 	glUniform3f(LightColorLocation, color[0], color[1], color[2]);
 	glUniform1f(LightIntensityLocation, ambientIntensity);
+	glUniform1f(DiffuseIntensityLocation, 0);
+	glUniform1f(SpecularStrengthLocation, 0);
 }
 
-void Light::UseLight(GLuint LightIntensityLocation, GLfloat LightColorLocation, GLfloat DiffuseIntensityLocation, GLint LightPositionLocation)
+void Light::UseLightDif(GLuint LightIntensityLocation, GLfloat LightColorLocation, GLfloat DiffuseIntensityLocation, GLint LightPositionLocation)
 {
 	glUniform3f(LightColorLocation, color[0], color[1], color[2]);
 	glUniform1f(LightIntensityLocation, ambientIntensity);

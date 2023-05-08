@@ -19,9 +19,10 @@ public:
 	void DrawMesh(float scale);
 
 	// Use only ambient light
-	void UseLight(GLuint LightIntensityLocation, GLfloat LightColorLocation);
+	void UseLightAmb(GLuint LightIntensityLocation, GLfloat LightColorLocation, GLfloat DiffuseIntensityLocation
+		, GLfloat SpecularStrengthLocation);
 	// Use both ambient and diffuse light
-	void UseLight(GLuint LightIntensityLocation, GLfloat LightColorLocation, GLfloat DiffuseIntensityLocation,
+	void UseLightDif(GLuint LightIntensityLocation, GLfloat LightColorLocation, GLfloat DiffuseIntensityLocation,
 		GLint LightPositionLocation);
 
 

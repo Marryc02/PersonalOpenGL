@@ -36,9 +36,11 @@ Enemy* enemy;
 * C = Move camera downwards
 * Shift = Increase camera movement speed
 *
-* L = Lock/Unlock camera : SWITCHED TO CHANGE FIRST/THIRD PERSON
 * O = Go to fixed camera position 1 (Requires camera to be locked)
 * P = Go to fixed camera position 2 (Requires camera to be locked)
+* 
+* RELEVANT FOR THE EXAM:
+* L = Lock/Unlock camera : SWITCHED TO CHANGE FIRST/THIRD PERSON FOR THE EXAM
 *
 * 1 = Full/Solid rendering mode
 * 2 = Wireframe rendering mode
@@ -388,9 +390,17 @@ int main()
 		//light->UseLight(mAmbientIntensityUniform, mAmbientColorUniform, mDiffuseIntensityUniform, mLightPositionUniform);
 		//pickup->setScale(glm::vec3(2.0, 2.0, 2.0));
 
+		//if (lightswitch->bSwitchHasBeenFlipped == false)
+		//{
+		//	light->UseLight(mAmbientIntensityUniform, mAmbientColorUniform, mDiffuseIntensityUniform, mLightPositionUniform);
+		//}
 		if (lightswitch->bSwitchHasBeenFlipped == false)
 		{
-			light->UseLight(mAmbientIntensityUniform, mAmbientColorUniform, mDiffuseIntensityUniform, mLightPositionUniform);
+			light->UseLightDif(mAmbientIntensityUniform, mAmbientColorUniform, mDiffuseIntensityUniform, mLightPositionUniform);
+		}
+		else
+		{
+			light->UseLightAmb(mAmbientIntensityUniform, mAmbientColorUniform, mDiffuseIntensityUniform, mSpecIntensityUniform);
 		}
 
 		if (enemy->WillResetGame)
@@ -417,6 +427,7 @@ void SetupPlainShader(int shaderIndex)
 	mDiffuseIntensityUniform = glGetUniformLocation(shaderPrograms[shaderIndex]->GetProgram(), "directionalLight.diffuseIntensity");
 	mCameraPositionUniform = glGetUniformLocation(shaderPrograms[shaderIndex]->GetProgram(), "viewPos");
 	mLightPositionUniform = glGetUniformLocation(shaderPrograms[shaderIndex]->GetProgram(), "lightPos");
+	mSpecIntensityUniform = glGetUniformLocation(shaderPrograms[shaderIndex]->GetProgram(), "specularStrength");
 }
 
 void SetupTextureShader(int shaderIndex)

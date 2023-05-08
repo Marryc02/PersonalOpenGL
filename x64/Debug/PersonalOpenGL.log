@@ -1,12 +1,14 @@
 ﻿  main.cpp
-C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(393,68): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(393,46): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(572,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(573,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(577,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(578,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(579,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(580,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(625,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-glfw3.lib(input.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(input.obj)' or at ''; linking object as if no debug info
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(399,71): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(399,49): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(403,97): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(403,71): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(403,49): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(583,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(584,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(588,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(589,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(590,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(591,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\PersonalOpenGL\main.cpp(636,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   PersonalOpenGL.vcxproj -> C:\Users\marku\source\repos\Fjerde semester\3D-programmering\3D-Programmering i VS\PersonalOpenGL\x64\Debug\PersonalOpenGL.exe
